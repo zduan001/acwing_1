@@ -1,0 +1,30 @@
+#include <iostream>
+#include <vector>
+#include <map>
+
+using namespace std;
+
+class Solution {
+public:
+    map<string, vector<string>> mp;
+    bool pyramidTransition(string bottom, vector<string>& allowed) {
+        for (string str : allowed) {
+            mp[str.substr(0,2)].push_back(str.substr(2));
+        }
+        return dfs(bottom, 0, "");
+    }
+    
+    bool dfs(string base, int idx, string top) {
+        if (base.length() == 1) return true;
+        if (idx == base.length()-1) return dfs(top, 0, "");
+        
+        for (string s : mp[base.substr(idx, 2)]) {
+            if (dfs(base, idx+1, top + s)) return true;
+        }
+        return false;
+    }
+};
+
+int main() {
+  
+}
