@@ -39,8 +39,6 @@ public:
     }
 
     for (string str : res) cout << str << endl;
-
-
   }
 };
 
