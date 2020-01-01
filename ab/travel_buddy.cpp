@@ -26,6 +26,7 @@ vector<int> travel_buddy (vector<string> myciteis, vector<vector<string>> friend
 
   vector<int> res; 
   for (auto item : buddy) {
+    if (item.first < 0.5) continue;
     res.push_back(item.second);
   }
 }
