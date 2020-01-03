@@ -53,6 +53,35 @@ double find_median_with_pq(){
     }
 }
 
+double find_kth_with_scans(int l, int r, int k) {
+  if (l>=r) return l;
+  int res = l;
+  int mid = (l+r) >> 1;
+  int cnt = 0;
+  for (int i = 0; i < n; i++) {
+    
+    if (q[i] <= mid) {
+      cnt ++;
+      res = max(res, q[i]);
+    }
+  }
+  if (cnt < k) {
+    return find_kth_with_scans(res+1, r, k);
+  } else {
+    return find_kth_with_scans(l, res, k);
+  }
+}
+
+double find_median_larg_file() {
+  if (n%2) {
+    return find_kth_with_scans(0, INT32_MAX, n / 2 +1);
+  } else {
+    double x = find_kth_with_scans(0, INT32_MAX, n /2);
+    double y = find_kth_with_scans(0, INT32_MAX, n /2+1);
+    return x+y/2.0;
+  }
+}
+
 int main() {
   cin >> n;
 
@@ -70,4 +99,6 @@ int main() {
     int l = quick_find(0, n-1, n/2);
     cout << ((double)l+r)/2.0 << endl;
   }
+
+  cout << find_median_larg_file() << endl;
 }
