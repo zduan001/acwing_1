@@ -51,7 +51,6 @@ double find_median_with_pq(){
     if (minq.size() > maxq.size()) {
       return (double)minq.top();
     }
-
 }
 
 int main() {
