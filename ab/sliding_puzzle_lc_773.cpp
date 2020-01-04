@@ -39,6 +39,18 @@ public:
       return -1;
     }
 
+    bool check(string s) {
+      int t = 0;
+      for (int i = 0;i < s.length(); i++) {
+        for (int j = i+1; j < s.length(); j++) {
+          if (s[i] == '0' || s[j] == '0') continue;
+          if (s[i] - '1' > s[j] -'1') t++;
+        }
+      }
+      if (t%2 == 0) return true;
+      else return false;
+    }
+
     int a_start(vector<vector<int>>& board) {
       mp.clear();
       n = (int)board.size(); m = (int)board[0].size();
@@ -48,6 +60,8 @@ public:
           s += to_string(board[i][j]);
         }
       }
+      if(!check(s)) return -1;
+
       vector<vector<int>> idx = {{1,3}, {0,2,4}, {1, 5}, {0, 4}, {3,1,5}, {2,4}};
       mp[s] = 0;
       priority_queue<pis, vector<pis>, greater<pis>> pq;
@@ -87,7 +101,7 @@ private:
 };
 
 int main() {
-  vector<vector<int>> input = {{4,1,2},{5,0,3}};
+  vector<vector<int>> input = {{3,2,4},{1,5,0}}; //{{4,1,2},{5,0,3}};
   Solution sol;
   cout << sol.a_start(input) << endl;
   return 0;
