@@ -7,38 +7,26 @@
 using namespace std;
 
 //Q1
-//class Solution{
-//  public:
-//      string freqAlphabets(string s) {
-//        vector<int> pd;
-//        pd.push_back(-1);
-//        for (int i = 0; i< s.length(); i++) {
-//            if (s[i] == '#') pd.push_back(i);
-//        }
-//        pd.push_back((int)s.length());
-//
-//        string res = "";
-//        for (int i = 0;i < pd.size() -1; i++) {
-//          string tmp = s.substr(pd[i]+1, pd[i+1]- pd[i]-1);
-//            if(tmp.length() == 0) continue;
-//          int j = 0;
-//          for (;j < (int)tmp.length()-2; j++) {
-//              res += 'a' + (tmp[j] -'1');
-//          }
-//
-//          if (i == pd.size()-2 && pd[i] != s.length()-1) {
-//            for (; j < tmp.length(); j++)
-//              res += 'a' + (tmp[j] -'1');
-//          } else {
-//            res += 'a' + stoi(tmp.substr(tmp.length()-2, 2))-1;
-//          }
-//        }
-//        return res;
-//
-//
-//    }
-//
-//};
+// class Solution {
+// public:
+//     string freqAlphabets(string s) {
+//         string res = "";
+//         for (int i = 0;i < s.length(); i++) {
+            
+//             int tmp;
+//             if (i + 2 < s.length() && s[i+2] == '#') {
+//                 tmp = stoi(s.substr(i, 2));
+//                 i = i+2;
+//             } else {
+//                 tmp = s[i] - '1'+1;
+//             }
+            
+//             res += 'a'+ tmp -1;
+            
+//         }
+//         return res;
+//     }
+// };
 
 //Q2
 //class Solution {
