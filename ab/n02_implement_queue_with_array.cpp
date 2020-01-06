@@ -26,7 +26,7 @@ public:
   }
 
   void pop() {
-      if (size == 0) return;
+    if (size == 0) return;
     hh++;
     size--;
     if (hh == N) {
@@ -36,7 +36,7 @@ public:
   }
 private:
   list<array<int, N>> lt;
-  int hh = 0, tt = -1;
+  int hh = 0, tt = -1; // 
   int size = 0;
 };
 

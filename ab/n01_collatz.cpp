@@ -16,8 +16,6 @@ int main() {
   int l,r;
   cin >> l >> r;
 
-  // cout << get_step(7) << endl;
-
   int res = 0;
   for (int i = l; i <=r; i ++) {
     res = max(res, get_step(l));

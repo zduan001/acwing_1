@@ -11,13 +11,9 @@ class Solution{
       i = -1; j = -1; 
     }
 
-    bool has_next() {
-      return check(false);
-    }
+    bool has_next() {return check(false);}
 
-    bool move_next() {
-      return check(true);
-    }
+    bool move_next() {return check(true);}
 
     bool check(bool move) {
       int x, y;
