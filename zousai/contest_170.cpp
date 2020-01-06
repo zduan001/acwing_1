@@ -11,8 +11,7 @@ using namespace std;
 // public:
 //     string freqAlphabets(string s) {
 //         string res = "";
-//         for (int i = 0;i < s.length(); i++) {
-            
+//         for (int i = 0;i < s.length(); i++) {            
 //             int tmp;
 //             if (i + 2 < s.length() && s[i+2] == '#') {
 //                 tmp = stoi(s.substr(i, 2));
@@ -20,9 +19,7 @@ using namespace std;
 //             } else {
 //                 tmp = s[i] - '1'+1;
 //             }
-            
 //             res += 'a'+ tmp -1;
-            
 //         }
 //         return res;
 //     }
