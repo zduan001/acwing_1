@@ -18,7 +18,8 @@ int main() {
 
   int res = 0;
   for (int i = l; i <=r; i ++) {
-    res = max(res, get_step(l));
+    
+    res = max(res, get_step(i));
   }
   cout << res << endl;
 }
