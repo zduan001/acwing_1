@@ -15,9 +15,9 @@ public:
   }
 
   bool is_operator(char c) {
-    return (c == '*' || 
-            c == '+' || 
-            c == '/' || 
+    return (c == '*' ||
+            c == '+' ||
+            c == '/' ||
             c == '-' ||
             c == '(' ||
             c == ')');
@@ -34,7 +34,7 @@ public:
       if (j - i > 0) {
         string numstr = str.substr(i, j-i);
         tokens.push_back(numstr);
-        // cout << i << " " << j << " " <<numstr<< endl;  
+        // cout << i << " " << j << " " <<numstr<< endl;
       }
       if (str[j] != '\0') {
         tokens.push_back(string(1, str[j]));
@@ -48,6 +48,7 @@ public:
     int level = 0;
     bool is_last_number = false;
     for (string s : tokens) {
+      if (trim(s).length() == 0 ) continue;
       if (s.length() == 1 && !(s[0] >= '0' && s[0] <= '9')) {
         if (s == "(") {level += 10; continue;}
         if (s == ")") {level -= 10; continue;}
@@ -58,7 +59,7 @@ public:
         if (s == "+" || s == "-") cur_lev = level + 2;
         if (s == "*" || s == "/") cur_lev = level + 4;
 
-        while(ops.size() && ops.top().second <= cur_lev) {
+        while(ops.size() && ops.top().second >= cur_lev) {
           cal();
         }
         ops.push({s, cur_lev});
@@ -82,6 +83,16 @@ public:
     else if (op == "*") nums.push(a*b);
     else if (op == "/") nums.push(a/b);
   }
+    
+  string trim(string str) {
+      string res;
+      for(char c: str) {
+          if (c != ' ') {
+              res += c;
+          }
+      }
+      return res;
+  }
 
 private:
   stack<int> nums;
@@ -90,12 +101,20 @@ private:
 
 int main() {
   Solution sol;
-  string s = "6-4 / 2 ";
+  string s = "2*(5+5*2)/3+(6/2+8)";
   // string s = "-(-(-7))";
   // cout << sol.calculate(s) << endl;
   // vector<string> tokens = sol.tokenize(s);
   // cout << tokens.size();
-  // for (string str : tokens) {cout << str << endl;}
+  // for (string str : tokens) {cout << str << " ";}
+  // cout << endl;
   cout << sol.caculate(s) << endl;
   return 0;
 }
+
+/*
+"1 + 1" = 2
+" 6-4 / 2 " = 4
+"2*(5+5*2)/3+(6/2+8)" = 21
+"(2+6* 3+5- (3*14/7+2)*5)+3"=-12
+*/
