@@ -44,7 +44,6 @@ private:
   int size = 0;
 };
 
-
 int main() {
   Queue sol;
   for (int i = 0; i < 15; i++) {
