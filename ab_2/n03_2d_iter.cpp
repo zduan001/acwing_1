@@ -58,7 +58,7 @@ int main() {
   cout << iter.get_val() << endl;
   iter.next();
   cout << iter.get_val() << endl;
-  iter.next()
+  iter.next();
 
   return 0;
 }
