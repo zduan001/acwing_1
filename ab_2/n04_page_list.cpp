@@ -53,7 +53,6 @@ int main() {
       cout << str << endl;
     }
     cout << "=================" << endl;
-
   }
   return 0;
 }

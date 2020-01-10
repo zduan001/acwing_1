@@ -20,6 +20,7 @@ public:
   void remove() {
     if (i < container.size() && j < container[i].size()) {
       container[i].erase(container[i].begin()+j);
+     // next();
       return;
     }
   }
@@ -53,6 +54,7 @@ int main() {
 
   cout << iter.get_val() << endl;
   iter.next();
+  iter.remove();
   cout << iter.get_val() << endl;
   iter.next();
   cout << iter.get_val() << endl;
