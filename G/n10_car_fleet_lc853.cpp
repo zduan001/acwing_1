@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -23,6 +25,33 @@ using namespace std;
 
 
 // How many car fleets will arrive at the destination?
+typedef pair<int, int> pii;
+
+class Solution {
+public:
+  int carFleet(int target, vector<int>& position, vector<int>& speed) {
+    int n = position.size();
+    if (n <= 1) return n;  
+    pii pv[n];
+    for (int i = 0;i < n; i++) {
+      pv[i] = {position[i], speed[i]};
+    }
+    sort (pv, pv+n);
+    reverse (pv, pv+n);
+
+    double cur_t = 0;
+    int cnt = 0;
+    for (auto item : pv) {
+      int pos = item.first, sp = item.second;
+      double time = (double)(target-pos)/sp;
+      if (time >= cur_t) {
+        cur_t = time;
+        cnt++;
+      }
+    }
+    return cnt;
+  }
+};
 
 int main() {
 
