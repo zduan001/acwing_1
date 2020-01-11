@@ -30,15 +30,20 @@ public:
   void dfs(int a, int b, int dir) {
     robot.clean();
     s.insert({a,b});
-    for(int i = 0;i < 4; i++) {
+    for(int i = 0; i < 4; i++) {
       int x = a + dx[dir%4], y = b + dy[dir%4];
       if (s.count({x, y})) continue;
       if (robot.move()) {
         dfs(x, y, dir%4);
+        robot.turnLeft();
+        robot.turnLeft();
       }
       robot.turnLeft();
       dir++;
     }
+    robot.turnLeft();
+    robot.turnLeft();
+    robot.move();
   }
 
 private:
