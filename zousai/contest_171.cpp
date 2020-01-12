@@ -14,7 +14,6 @@ public:
             if(to_string(i).find('0') == string::npos && to_string(j).find('0')  == string::npos) return {i, j};
         }
         return {0,0};
-        
     }
 };
 
@@ -65,6 +64,8 @@ public:
     }
 };
 
+
+// another way: https://www.acwing.com/file_system/file/content/whole/index/content/304924/
 #define N 305
 class Solution_4 {
 public:
