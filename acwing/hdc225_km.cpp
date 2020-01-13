@@ -7,13 +7,13 @@ using namespace std;
 #define N 305
 #define INF 0x3f3f3f3f
 
-int g[N][N];
-int dx[N], dy[N];
-bool visx[N], visy[N];
-int match[N];
-int slack[N];
+int g[N][N]; // 记录每个妹子和每个男生的好感度
+int dx[N], dy[N]; // 每个妹子的期望值, 每个男生的期望值
+bool visx[N], visy[N]; // 记录每一轮匹配匹配过的女生, 记录每一轮匹配匹配过的男生
+int match[N]; // 记录每个男生匹配到的妹子 如果没有则为-1
+int slack[N]; // 记录每个汉子如果能被妹子倾心最少还需要多少期望值
 
-int n, lack;
+int n;
 
 bool find(int u) {
   visx[u] = 1;
