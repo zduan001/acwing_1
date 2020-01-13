@@ -60,7 +60,6 @@ void km() {
       for (int j = 1; j <= n; j++) {
         if (visx[j]) dx[j] -=d;
         if (visy[j]) dy[j] +=d;
-        else slack[j] -= d;
       }
     }
   }
