@@ -41,16 +41,16 @@ double find_median_with_pq(){
     }
   }
 
-    if (maxq.size() == minq.size()) {
-      int l = maxq.top(), r = minq.top();
-      return ((double)l + (double)r) / 2.0;
-    }
-    if (maxq.size() > minq.size()) {
-      return (double)maxq.top();
-    }
-    if (minq.size() > maxq.size()) {
-      return (double)minq.top();
-    }
+  if (maxq.size() == minq.size()) {
+    int l = maxq.top(), r = minq.top();
+    return ((double)l + (double)r) / 2.0;
+  }
+  if (maxq.size() > minq.size()) {
+    return (double)maxq.top();
+  }
+  if (minq.size() > maxq.size()) {
+    return (double)minq.top();
+  }
 }
 
 double find_kth_with_scans(int l, int r, int k) {
