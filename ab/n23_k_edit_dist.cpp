@@ -31,7 +31,7 @@ public:
             
             for (int j = 1; j <= target.length(); j++ ) {
                 char c = target[j-1];
-                if (c-'a' == i) {
+                if (c - 'a' == i) {
                     dp[dep][j] = dp[dep-1][j-1];
                 } else {
                     dp[dep][j] = 1 + min(dp[dep-1][j-1], min(dp[dep-1][j], dp[dep][j-1]));

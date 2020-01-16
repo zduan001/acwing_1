@@ -29,8 +29,7 @@ public:
         }
         
         string s = to_string(res);
-        s.substr(0, s.find('.')+4);
-        return s;
+        return s.substr(0, s.find('.')+4);
     }
 };
 
