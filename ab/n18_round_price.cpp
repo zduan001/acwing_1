@@ -20,7 +20,7 @@ public:
       if (target < sum || target > sum+count) return "-1";
 
       int n = count - (target- sum);
-      nth_element(diff.begin(), diff.begin() + 5, diff.end());
+      nth_element(diff.begin(), diff.begin() + n, diff.end());
 
       double res = 0.0;
       for (int i = 0; i < diff.size(); i++) {

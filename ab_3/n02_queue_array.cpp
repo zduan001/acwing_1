@@ -66,6 +66,4 @@ int main() {
     cout << que.front() << endl;
     que.pop();
   }
-
-
 }
