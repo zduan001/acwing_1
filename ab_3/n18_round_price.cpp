@@ -39,5 +39,4 @@ int main() {
     Solution sol;
     cout << sol.minimizeError(input, 7) << endl; // expect 1.100
     return 0;
-
 }
