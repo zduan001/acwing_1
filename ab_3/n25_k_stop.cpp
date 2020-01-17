@@ -12,7 +12,7 @@ public:
         memcpy(tmp, dist, sizeof dist);
         dist[src] = 0;
 
-        for (int i = 0;i <=K=1; i++) {
+        for (int i = 0; i <=K+1; i++) {
           for (auto flight : flights) {
             int u = flight[0], v = flight[1], w = flight[2];
             if (dist[v] > tmp[u] + w) {
