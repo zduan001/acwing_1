@@ -27,28 +27,8 @@ public:
             dp[i][0] = i;
         }
         if (target=="" && root->end) res.push_back(root->word);
-        // dp_run(root, 1, target, k);
         dfs(root, 1);
         return res;
-    }
-
-    void dp_run(node* root, int dep, string target, int k) {
-        for (int i = 0; i < 26; i++) {
-            if (!root->children[i]) continue;
-            
-            for (int j = 1; j <= target.length(); j++ ) {
-                char c = target[j-1];
-                if (c-'a' == i) {
-                    dp[dep][j] = dp[dep-1][j-1];
-                } else {
-                    dp[dep][j] = 1 + min(dp[dep-1][j-1], min(dp[dep-1][j], dp[dep][j-1]));
-                }
-            }
-            if (root->children[i]->end && dp[dep][target.length()] <= k) {
-                res.push_back(root->children[i]->word);
-            }
-            dp_run(root->children[i], dep+1, target, k);
-        }
     }
 
     void dfs(node* root, int dep) {
