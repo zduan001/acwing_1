@@ -6,8 +6,6 @@ using namespace std;
 //lintcode 919 https://www.lintcode.com/problem/meeting-rooms-ii/description
 
 
-
-
 class Interval {
 public:
     int start, end;
