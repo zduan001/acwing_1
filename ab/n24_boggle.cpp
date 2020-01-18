@@ -8,6 +8,7 @@ using namespace std;
 #define N 105
 
 // lint code 132, https://www.lintcode.com/problem/word-search-ii/description
+// 得用prefix来剪枝。
 class Solution {
 public:
   vector<string> wordSearchII(vector<vector<char>> &board, vector<string> &words) {
