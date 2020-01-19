@@ -79,6 +79,7 @@ using namespace std;
 // };
 
 class Solution {
+  //https://leetcode.com/problems/video-stitching/
 public:
   int minTaps(int n, vector<int>& ranges) {
     vector<pair<int, int>> x;
@@ -90,9 +91,13 @@ public:
 
     int res = 0;
     for (int i = 0, st = 0, end = 0; st < n; st= end, ++res) {
-      
+      for(; i < x.size() && x[i].first <= st; i++) {
+        end = max(end, x[i].second);
+      }
+
+      if (st == end) return -1;
     }
-    
+    return res;
   }  
 };
 
