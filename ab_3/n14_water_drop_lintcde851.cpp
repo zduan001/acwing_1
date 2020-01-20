@@ -3,15 +3,9 @@
 #include <map>
 
 using namespace std;
-
+// discuss the rule of the flow first. 
 class Solution {
 public:
-    /**
-     * @param heights: the height of the terrain
-     * @param V: the units of water
-     * @param K: the index
-     * @return: how much water is at each index
-     */
     vector<int> pourWater(vector<int> &heights, int V, int K) {
         int n = heights.size();
         vector<int> tmp = heights;

@@ -14,7 +14,6 @@ using namespace std;
 //         return (n>0 && match(s[0], p[0]) && isMatch(s.substr(1), p.substr(1)));
 //       }
 //     }
-
 //     bool match(char a, char b) {
 //       return b == '.' || a == b;
 //     }

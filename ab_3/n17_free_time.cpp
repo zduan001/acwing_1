@@ -39,7 +39,7 @@ vector<pii> employeeFreeTime(vector<vector<pii>>& schedule) {
             }
         }
     }
-    res.push_back(cur);
+    if (has_cur) res.push_back(cur);
 
     int l = 0;
     vector<pii> ans;

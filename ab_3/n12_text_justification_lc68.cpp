@@ -24,7 +24,7 @@ public:
         for (int k = i; k < j; k++) {
           str += words[k];
           int tmp = 0;
-          if (blank>0){ // forget this line.
+          if (blank>0) { //mistake: forget this line.
             if (j == n) {
               if (k == n-1) tmp = blank;
               else tmp = 1;
