@@ -31,10 +31,8 @@ vector<pii> employeeFreeTime(vector<vector<pii>>& schedule) {
             cur = next;
             has_cur = true;
         } else {
-            if (cur.second >= next.first) {
-                if (cur.second < next.second) {
-                    cur.second = next.second;
-                }
+            if (cur.second >= next.first) {    
+                cur.second = max(cur.second, next.second);
             } else {
                 res.push_back(cur);
                 cur = next;

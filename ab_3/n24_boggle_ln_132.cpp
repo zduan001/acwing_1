@@ -8,8 +8,6 @@ using namespace std;
 
 #define N 105
 
-
-
 class Solution {
 public:  
   vector<string> wordSearchII(vector<vector<char>> &board, vector<string> &words) {

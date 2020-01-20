@@ -33,7 +33,7 @@ public:
                 if (str_next.length() == 0) continue;
                 que.push(str_next);
                 if (dist[str_next] > dist[u]+1)
-                    dist[str_next] = dist[u] + 1;
+                    dist[str_next] = dist[u]+1;
             }
         }
         return -1;;
