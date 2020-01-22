@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 using namespace std;
 
@@ -22,17 +23,14 @@ public:
 
       sort(ends.begin(), ends.end());
 
-      int l = -1;
-      int count = 0;
+      int l = INT_MIN, count = 0;
       vector<pii> res;
       for (auto item : ends) {
         count += item.y;
         if (!count) l = item.first;
-        if (count && l > 0) {
-          if (l > 0) {
-            if (l != item.x) res.push_back({l, item.x});
-            l = -1;
-          }
+        if (count && l > INT_MIN) {
+          if (l != item.x) res.push_back({l, item.x});
+          l = INT_MIN;
         }
       }
       return res;

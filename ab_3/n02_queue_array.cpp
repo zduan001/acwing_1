@@ -1,6 +1,7 @@
 #include <iostream>
 #include <list>
 #include <array>
+#include <vector>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ class MyQueue{
   public:
   void push(int x) {
     if (tt == -1) {
-      array<int, N> tmp;
+      vector<int> tmp(N);
       lt.push_back(tmp);
       tt = 0;
     }
@@ -39,11 +40,10 @@ class MyQueue{
   }
 
 private:
-  list<array<int,N>> lt;
+  list<vector<int>> lt;
   int hh = 0, tt = -1;
   int size = 0;
 };
-
 
 int main() {
   MyQueue que;
