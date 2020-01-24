@@ -27,11 +27,11 @@ int findkthelement(int l, int r, int k) {
 
 int main() {
 
-  a =  {2,4,1,5,3, 6};
+  a =  {2,4,1,5,3,6};
   // n = 5;
   // q[0] = 2, q[1] = 4, q[2] = 1, q[3] = 5, q[4] = 3;
   int n = a.size();
-  if (n%1) {
+  if (n%2) {
     int val = findkthelement(0, INT_MAX, n/2);
     cout << val << endl;
   } else {

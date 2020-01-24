@@ -2,14 +2,12 @@
 
 using namespace std;
 
-
 class Solution {
   public:
   string check(string input) {
     string res = "";
     
     bool in_range= false;
-
     for (int i = 0;i < input.length(); i++) {
       if (input[i] == ',') {
         if(in_range) res+= ",";
@@ -27,12 +25,10 @@ class Solution {
           continue;
         }
       }
-
       res += input[i]; 
-      
+    }
+    return res;
   }
-  return res;
-}
 };
 
 int main() {

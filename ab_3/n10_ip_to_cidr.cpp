@@ -47,7 +47,6 @@ private:
   map<int, int> log;
 };
 
-
 int main() {
   Solution sol;
   vector<string> res = sol.ipToCIDR("255.0.0.7", 10);
