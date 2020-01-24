@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <queue>
+#include <climits>
 
 using namespace std;
 
@@ -79,6 +80,34 @@ double find_median_larg_file() {
     double x = find_kth_with_scans(0, INT32_MAX, n /2);
     double y = find_kth_with_scans(0, INT32_MAX, n /2+1);
     return x+y/2.0;
+  }
+}
+
+double dfs(int l, int r, int k) {
+  if (l>=r) return l;
+  int mid = (l + (r-l)/2);
+  int res = INT_MIN;
+  int cnt = 0;
+  for (int i = 0; i < n; i++) {
+    if (q[i] < mid) {
+      res = max( res, q[i]);
+      cnt++;
+    }
+  }
+
+  if(cnt < k) {
+    return dfs(res+1, r, k);
+  } else {
+    return dfs(l, res, k);
+  }
+}
+
+double find() {
+  if (n%2) return dfs(0, INT_MAX, n/2);
+  else {
+    double left = dfs(0, INT_MAX, n/2);
+    double right = dfs(0, INT_MAX, n/2+1);
+    return (left+right)/2;
   }
 }
 

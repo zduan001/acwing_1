@@ -8,12 +8,13 @@ vector<vector<double>> res;
 vector<double> prices;
 
 void dfs(vector<double> order, int idx, double target, double sum) {
-  if (sum > target) return;
   if (abs(sum - target) < 0.0001) {
     vector<double> tmp = order;
     res.push_back(tmp);
     return;
   }
+  if (sum > target) return;
+
   if (idx >= prices.size()) return;
 
   dfs(order, idx+1, target, sum);
