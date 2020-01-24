@@ -14,7 +14,6 @@ void dfs(vector<double> order, int idx, double target, double sum) {
     return;
   }
   if (sum > target) return;
-
   if (idx >= prices.size()) return;
 
   dfs(order, idx+1, target, sum);
