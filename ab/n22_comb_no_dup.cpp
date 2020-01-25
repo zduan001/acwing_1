@@ -4,6 +4,8 @@
 
 using namespace std;
 
+// leet code 40. combination sum 2, 
+// can not have dup. 
 class Solution {
 public:
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {

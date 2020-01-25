@@ -30,13 +30,6 @@ public:
                 dfs(com, i, sum + menu[i]);
                 com.pop_back();
             }
-            // com.push_back(menu[idx]);
-            // dfs(com, idx, sum+menu[idx]);
-            // com.pop_back();
-            // dfs(com, idx+1, sum);
-            // com.push_back(menu[idx]);
-            // dfs(com, idx+1, sum+menu[idx]);
-            // com.pop_back();
         }
     }
 private:
