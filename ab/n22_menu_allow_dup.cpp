@@ -22,8 +22,9 @@ public:
             return;
         } else if (sum > total) {
             return;
+        } else  if (idx >= menu.size()) {
+            return;
         } else {
-            if (idx >= menu.size()) return;
             for (int i = idx; i < menu.size(); i++) {
                 com.push_back(menu[i]);
                 dfs(com, i, sum + menu[i]);
