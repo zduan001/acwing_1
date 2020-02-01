@@ -14,6 +14,7 @@ struct node {
 
 // 这题还行， 就是一个树上的DP。 DP table 在那搁着， 一层trie， 一个x坐标
 // target是 Y, 
+//https://www.lintcode.com/problem/k-edit-distance/description
 class Solution {
 public:
     vector<string> kDistance(vector<string> &words, string &target, int k) {

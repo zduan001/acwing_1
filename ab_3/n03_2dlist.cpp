@@ -81,10 +81,40 @@ private:
   int pos;
 };
 
+class TwoD {
+public:
+    TwoD(vector<vector<int>>& input) {
+        
+        first = input.begin();
+        last = input.end();
+        idx = 0;
+    }
+    
+    bool hasNext() {
+        while(first != last && idx >= (*first).size()) {
+            first++; idx = 0;
+        }
+        return first != last;
+    }
+    
+    int next() {
+        if (hasNext()) {
+            return (*first)[idx++];
+        }
+    }
+    
+    void remove() {
+        (*first).erase((*first).begin() + idx);
+    }
+private:
+    vector<vector<int>>::iterator first, last;
+    int idx;
+};
+
 int main() {
   vector<vector<int>> input = {{1,2}, {}, {3}, {}, {}};
   // _2DIterator ite(input);
-  Vector2D ite(input);
+  TwoD ite(input);
   while(ite.hasNext()) {
     cout << ite.next() << endl;
   }
